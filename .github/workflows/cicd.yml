@@ -29,21 +29,21 @@ jobs:
     build-and-publish: # name can be anything
         needs: build-and-test
         runs-on: ubuntu-latest 
-    steps:
-        - name: Checkout code
-          uses: actions/checkout@v3
-        - name: Set up Docker Build
-          uses: docker/setup-buildx-action@v2
-        - name: Login to DockerHub
-          uses: docker/login-action@v2
-          with:
-            usernmae: ${{secrets.DOCKER_USERNAME}}
-            password: ${{secrets.DOCKER_PASSWORD}}
-        - name: Build and push Docker Image
-          uses: docker/build-push-action@v4
-          with:
-            context: .
-            push: true
-            tags: ${{secrets.DOCKER_USERNAME}}/flask-app:lastest
-        - name: Image digest 
-          run: echo ${{steps.build-and-publish.outputs.digest}}
+        steps:
+            - name: Checkout code
+            uses: actions/checkout@v3
+            - name: Set up Docker Build
+            uses: docker/setup-buildx-action@v2
+            - name: Login to DockerHub
+            uses: docker/login-action@v2
+            with:
+                usernmae: ${{secrets.DOCKER_USERNAME}}
+                password: ${{secrets.DOCKER_PASSWORD}}
+            - name: Build and push Docker Image
+            uses: docker/build-push-action@v4
+            with:
+                context: .
+                push: true
+                tags: ${{secrets.DOCKER_USERNAME}}/flask-app:lastest
+            - name: Image digest 
+            run: echo ${{steps.build-and-publish.outputs.digest}}
