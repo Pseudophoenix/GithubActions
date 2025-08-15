@@ -3,7 +3,7 @@ iniconfig==2.1.0
 numpy
 packaging==25.0
 pandas
-pluggy==1.6.0
+pluggy
 pygments==2.19.2
 pytest==8.4.1
 python-dateutil==2.9.0.post0
