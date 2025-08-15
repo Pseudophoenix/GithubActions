@@ -1,8 +1,8 @@
 colorama==0.4.6
 iniconfig==2.1.0
-numpy<=2.3.2
+numpy
 packaging==25.0
-pandas==2.3.1
+pandas
 pluggy==1.6.0
 pygments==2.19.2
 pytest==8.4.1
