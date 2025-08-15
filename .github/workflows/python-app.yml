@@ -24,7 +24,7 @@ jobs:
             - name: Install dependencies
               run: |
                 curl -LsSf https://astral.sh/uv/install.sh | sh
-                uv add -r .\requirements.txt
+                uv add -r requirements.txt
                 
             - name: Run tests
               run: pytest
